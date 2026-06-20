@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details - SJ's Collection Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">SJ's Collection Hub</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">MORE ACCESS</a></li>
+                <li><a href="#" id="navCategoryLink" onclick="goBackToCategory(event)" style="display:none;"></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Details Section -->
+    <section class="details">
+        <div class="container">
+            <button class="back-button" onclick="goBack()">← Back</button>
+            
+            <div class="details-container">
+                <div class="poster-section">
+                    <img id="detailsPoster" src="" alt="Poster" class="details-poster">
+                </div>
+                
+                <div class="info-section">
+                    <h1 id="detailsTitle">Title</h1>
+                    <p id="detailsCategory" class="category-badge">Category</p>
+                    
+                    <div id="seasonsContainer" style="display:none;">
+                        <h3>Select Season</h3>
+                        <div class="seasons-list" id="seasonsList">
+                            <!-- Seasons will be loaded here -->
+                        </div>
+                    </div>
+
+                    <div id="episodesContainer" style="display:none;">
+                        <h3>Episodes</h3>
+                        <div class="episodes-list" id="episodesList">
+                            <!-- Episodes will be loaded here -->
+                        </div>
+                    </div>
+
+                    <div id="movieContainer" style="display:none;">
+                        <button class="play-button" onclick="playMovie()">▶ PLAY NOW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Player Modal -->
+    <div id="playerModal" class="modal" style="display:none;">
+        <span class="close" onclick="closePlayer()">&times;</span>
+        <div class="modal-content">
+            <iframe id="videoPlayer" style="width:100%; height:600px; border:none;" allow="autoplay"></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 SJ's Collection Hub. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

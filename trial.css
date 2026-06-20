@@ -1,0 +1,285 @@
+/* ==================== TRIAL PAGE STYLING ==================== */
+
+/* Trial Grid - Smaller cards like categories */
+.trial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 40px 0;
+}
+
+/* Trial Card - Same style as category cards but smaller */
+.trial-card {
+    background: linear-gradient(135deg, rgba(20, 30, 50, 0.8) 0%, rgba(40, 50, 80, 0.8) 100%);
+    border: 2px solid rgba(124, 58, 237, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.trial-card:hover {
+    border-color: rgba(124, 58, 237, 0.8);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+    transform: translateY(-5px);
+}
+
+.trial-card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.trial-card-content {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.trial-card-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.trial-card-description {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    flex: 1;
+}
+
+.trial-card-button {
+    width: 100%;
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.trial-card-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.6);
+}
+
+.trial-card-button:active {
+    transform: scale(0.95);
+}
+
+/* ==================== TRIAL MODAL ==================== */
+
+.trial-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.trial-modal-content {
+    background: linear-gradient(135deg, rgba(20, 30, 60, 0.95) 0%, rgba(40, 50, 80, 0.95) 100%);
+    border: 2px solid rgba(124, 58, 237, 0.5);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 850px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.trial-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #7c3aed;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.2s ease;
+}
+
+.trial-close:hover {
+    color: #a855f7;
+    transform: scale(1.2);
+}
+
+.trial-modal-body {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    padding: 40px;
+}
+
+/* Left Side - Picture */
+.trial-modal-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.trial-modal-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid rgba(124, 58, 237, 0.5);
+    object-fit: cover;
+    box-shadow: 0 5px 20px rgba(124, 58, 237, 0.3);
+}
+
+/* Right Side - Info */
+.trial-modal-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.trial-modal-title {
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.trial-modal-description {
+    color: #d0d0d0;
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+/* Warning Box */
+.trial-warning-box {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
+    border: 2px solid rgba(239, 68, 68, 0.3);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 18px;
+}
+
+.warning-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.warning-icon {
+    font-size: 1.3rem;
+    margin-right: 8px;
+}
+
+.warning-title {
+    color: #ef4444;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.warning-text {
+    color: #fca5a5;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Action Buttons */
+.trial-buttons-container {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.trial-play-btn,
+.trial-buy-btn {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trial-play-btn {
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+    color: white;
+}
+
+.trial-play-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.6);
+}
+
+.trial-buy-btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.trial-buy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.6);
+}
+
+.trial-play-btn:active,
+.trial-buy-btn:active {
+    transform: scale(0.95);
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 768px) {
+    .trial-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    .trial-modal-body {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .trial-modal-image {
+        max-width: 100%;
+    }
+
+    .trial-modal-title {
+        font-size: 1.3rem;
+    }
+
+    .trial-modal-description {
+        font-size: 0.85rem;
+    }
+
+    .trial-buttons-container {
+        flex-direction: column;
+    }
+
+    .trial-close {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trial - SJ's Collection Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="trial.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">SJ's Collection Hub</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">MORE ACCESS</a></li>
+                <li><a href="list.html">MORE LIST</a></li>
+                <li><a href="trial.html" class="active">TRIAL</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Trial Section -->
+    <section class="content">
+        <div class="container">
+            <h2 class="section-title">Free Trial</h2>
+            <div class="trial-grid" id="trialGrid">
+                <!-- Trial items will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Trial Modal Popup -->
+    <div id="trialModal" class="trial-modal">
+        <div class="trial-modal-content">
+            <span class="trial-close" onclick="closeTrialModal()">&times;</span>
+            
+            <div class="trial-modal-body">
+                <!-- Left Side - Picture -->
+                <div class="trial-modal-left">
+                    <img id="trialPicture" src="" alt="Trial" class="trial-modal-image">
+                </div>
+                
+                <!-- Right Side - Info -->
+                <div class="trial-modal-right">
+                    <h2 id="trialTitle" class="trial-modal-title"></h2>
+                    <p id="trialDescription" class="trial-modal-description"></p>
+                    
+                    <!-- Warning Box -->
+                    <div class="trial-warning-box">
+                        <div class="warning-header">
+                            <span class="warning-icon">⚠️</span>
+                            <span class="warning-title">TRIAL VERSION</span>
+                        </div>
+                        <p id="trialWarning" class="warning-text"></p>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="trial-buttons-container">
+                        <button id="playTrialBtn" class="trial-play-btn" onclick="playTrialVideo()">Play Video</button>
+                        <a id="buyTrialBtn" class="trial-buy-btn" href="" target="_blank">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 SJ's Collection Hub. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="trial-code.js"></script>
+    <script>
+        // Load trial on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTrial();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists - SJ's Collection Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">SJ's Collection Hub</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">MORE ACCESS</a></li>
+                <li><a href="javascript:goToListCategories()">MORE LIST</a></li>
+                <li><a href="trial.html">TRIAL</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Lists Content -->
+    <section class="content">
+        <div class="container">
+            <h2 class="section-title" id="listTitle">Browse Lists</h2>
+            <div class="list-grid" id="listGrid">
+                <!-- Lists will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 SJ's Collection Hub. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Go to list categories
+        function goToListCategories() {
+            sessionStorage.removeItem('selectedListView');
+            window.location.href = 'list.html';
+        }
+
+        // Load lists on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectedListView = sessionStorage.getItem('selectedListView');
+            if (selectedListView) {
+                // If viewing a specific list, load that list
+                loadListView();
+            } else {
+                // Otherwise load the list categories
+                loadListsOnHomepage();
+            }
+        });
+    </script>
+</body>
+</html>
